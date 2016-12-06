@@ -32,7 +32,7 @@ process(1) :-
 	
 	retractall(define(X)),
 	assert( ( define(Warunek0) :- write(Pytanie0)) ),
-	append('C:/Users/Mike/Documents/Prolog/definitions.pl'),
+	append('C:/Users/PC/Documents/Prolog/PrologProjekt/definitions.pl'),
 	listing(define),
 	told,	
 	
@@ -42,12 +42,12 @@ process(1) :-
 	write("Podaj 2 warunek zaistnialego problemu: "),nl,
 	read(Warunek1),nl,	
 	assert( ( Objaw :- verify(Warunek0),verify(Warunek1) ) ),  
-	append('C:/Users/Mike/Documents/Prolog/d.pl'),
+	append('C:/Users/PC/Documents/Prolog/PrologProjekt/d.pl'),
 	listing(Objaw),
 	told,	
 	retractall(diagnoza(X)),
 	assert( ( diagnoza(Objaw) :- Objaw, !) ),
-	append('C:/Users/Mike/Documents/Prolog/diag.pl'),	
+	append('C:/Users/PC/Documents/Prolog/PrologProjekt/diag.pl'),	
 	listing(diagnoza),
 	told,
 	menu.
@@ -65,7 +65,7 @@ process(3) :- !.
 %trysave :-
 %	assert( ( boldupy :- verify(headache)) ),
 %	assert( ( hypothesis(boldupy) :- boldupy, !) ),
-%	append('C:/Users/PC/Downloads/Prolog Project/Prolog/d.pl'),
+%	append('C:/Users/PC/Documents/Prolog/PrologProjekt/d.pl'),
 %	listing(boldupy),
 %	listing(hypothesis),
 	/* tutaj trzeba ostro poprawiæ dodawanie, listing dodaje wszystko, a jak dodaæ pojedynczo
@@ -77,9 +77,9 @@ process(3) :- !.
 tryread :-
 	write("Prosze odpowiadac \"y.\" (tak), \"n.\" (nie)."),nl,
 	retractall(diagnoza(X)),
-	['C:/Users/Mike/Documents/Prolog/d'],
-	['C:/Users/Mike/Documents/Prolog/diag'],
-	['C:/Users/Mike/Documents/Prolog/definitions'],
+	['C:/Users/PC/Documents/Prolog/PrologProjekt/d'],
+	['C:/Users/PC/Documents/Prolog/PrologProjekt/diag'],
+	['C:/Users/PC/Documents/Prolog/PrologProjekt/definitions'],
 	assertz( ( diagnoza(unknown)) ).
 	
 	

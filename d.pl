@@ -34,6 +34,22 @@ brak_kabla_internet :-
        verify(gniazdo_ethernet),
 	   verify(brak_kabla_ethernet).	  
 	   
+brak_kabla_Monitor_pow :-
+       verify(uruchamia_sie),
+       verify(brak_obrazu),
+	   verify(nie_wlaczony_monitor),
+	   verify(kabel_zasilania).	   
 
+awaria_monitora :-
+       verify(uruchamia_sie),
+       verify(brak_obrazu),
+	   verify(nie_wlaczony_monitor),
+	   verify(kabel_zasilania),
+	   verify(wcisniety_guzik).	   
 
-
+wylaczony_monitor :-
+       verify(uruchamia_sie),
+       verify(brak_obrazu),
+	   verify(nie_wlaczony_monitor),
+	   verify(kabel_zasilania),
+	   verify(nie_wcisniety_guzik).	   

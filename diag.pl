@@ -14,7 +14,11 @@ diagnoza(awaria_karty_sieciowej) :-
 	awaria_karty_sieciowej, !.	
 diagnoza(brak_kabla_internet) :-
 	brak_kabla_internet, !.
-
-
+diagnoza(brak_kabla_Monitor_pow) :-
+	brak_kabla_Monitor_pow, !.
+diagnoza(awaria_monitora) :-
+	awaria_monitora, !.
+diagnoza(wylaczony_monitor) :-
+	awaria_monitora, !.
 
 
