@@ -1,25 +1,25 @@
-start:- 	
+start:-
 	tryread,
 	diagnoza(Disease),
-    write('Uwazam, ze: '),
-    define(Disease),
-    nl,
-    undo,
+	write('Uwazamy ze masz: '),
+	write(Disease),
+	nl,
+	undo,
 	menu.
-	
+
 menu:-
-	tryread,
+	%tryread,
 	write("***************************************"),nl,
 	write(" *"),nl,
-	write("* 1. Dodaj pytanie do bazy pytañ *"),nl,
-	write("* 3. Startuj pytania *"),nl,
-	write("* 4. Wyjdz z programu *"),nl,
+	write("* 1. Dodaj problem do bazy problemow *"),nl,
+	write("* 2. Startuj system ekspercki *"),nl,
+	write("* 3. Wyjdz z programu *"),nl,
 	write("***************************************"),nl,
-	write("Please enter your choice:1,2,3 or 4 :"),nl,
+	write("Prosze dokonaj wyboru: 1,2 or 3:"),nl,
 	read(Choice),nl,
 
 process(Choice),
-	Choice = 4,!.
+	Choice = 3,!.
 
 process(1) :-
 	write("Podaj przyczyne zaistnialego problemu: "),nl,
@@ -53,28 +53,29 @@ process(1) :-
 	menu.
 		
 		
-process(3) :-
-  start.
+process(2) :-
+	start.
 
-process(4) :- !.
+process(3) :- !.
 
-add_rule(Predicate) :-
-    Fact =.. [Predicate],	
-    assertz(Fact).
-	
-trysave :-	
-	assert( ( boldupy :- verify(headache)) ),
-	assert( ( hypothesis(boldupy) :- boldupy, !) ),
-	append('C:/Users/Mike/Documents/Prolog/d.pl'),
-	listing(boldupy),
-	listing(hypothesis),
+%add_rule(Predicate) :-
+%    Fact =.. [Predicate],
+%    assertz(Fact).
+
+%trysave :-
+%	assert( ( boldupy :- verify(headache)) ),
+%	assert( ( hypothesis(boldupy) :- boldupy, !) ),
+%	append('C:/Users/PC/Downloads/Prolog Project/Prolog/d.pl'),
+%	listing(boldupy),
+%	listing(hypothesis),
 	/* tutaj trzeba ostro poprawiæ dodawanie, listing dodaje wszystko, a jak dodaæ pojedynczo
-	to jeszcze nie odkry³em	
+	to jeszcze nie odkry³em
 	( boldupy :- verify(headache)),
 	( diagnoza(boldupy) :- boldupy, !), */
-	told.
+%	told.
 
 tryread :-
+	write("Prosze odpowiadac \"y.\" (tak), \"n.\" (nie)."),nl,
 	retractall(diagnoza(X)),
 	['C:/Users/Mike/Documents/Prolog/d'],
 	['C:/Users/Mike/Documents/Prolog/diag'],
