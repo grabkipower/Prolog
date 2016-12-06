@@ -12,5 +12,19 @@ flu :-
 
 	   
 
+	   
+	   
+	   
 
+
+:- dynamic asdf/0.
+
+asdf :-
+	verify(af),
+	verify(_).
+
+:- dynamic sdf/0.
+
+sdf :-
+	verify(sdfdsf).
 

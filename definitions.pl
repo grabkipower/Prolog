@@ -16,3 +16,24 @@ define(runny_nose) :-
 	
 
 
+
+:- dynamic define/1.
+
+define(asdf) :-
+	write("ff").
+
+:- dynamic define/1.
+
+define(af) :-
+	write("sdf").
+
+:- dynamic define/1.
+
+define(sdf) :-
+	write("sdf").
+
+:- dynamic define/1.
+
+define(sdfdsf) :-
+	write("sdfsdf").
+

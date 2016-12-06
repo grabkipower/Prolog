@@ -24,24 +24,15 @@ process(Choice),
 process(1) :-
 	write("Podaj przyczyne zaistnialego problemu: "),nl,
 	read(Objaw),nl,
+	savedefinition(Objaw),
 	
-	write("Podaj 1 warunek zaistnialego problemu: "),nl,
-	read(Warunek0),nl,
-	write("Podaj 1 definicje problemu: "),nl,
-	read(Pytanie0),nl,
-	
-	retractall(define(X)),
-	assert( ( define(Warunek0) :- write(Pytanie0)) ),
-	append('C:/Users/Mike/Documents/Prolog/definitions.pl'),
-	listing(define),
-	told,	
+	write("Podaj warunek zaistnialego problemu: "),nl,
+	read(Warunek0),nl,	
+	savedefinition(Warunek0),
 	
 	
-	
-	
-	write("Podaj 2 warunek zaistnialego problemu: "),nl,
-	read(Warunek1),nl,	
-	assert( ( Objaw :- verify(Warunek0),verify(Warunek1) ) ),  
+	retractall(Objaw),
+	assert( ( Objaw :- verify(Warunek0) ) ),  
 	append('C:/Users/Mike/Documents/Prolog/d.pl'),
 	listing(Objaw),
 	told,	
@@ -51,7 +42,22 @@ process(1) :-
 	listing(diagnoza),
 	told,
 	menu.
-		
+
+	
+
+	
+savedefinition(X) :-
+	define(X).
+	
+savedefinition(X) :-
+	\+define(X),	
+	write("Podaj definicje problemu: "),nl,
+	read(Pyt),nl,
+	retractall(define(Z)),
+	assert( ( define(X) :- write(Pyt)) ),
+	append('C:/Users/Mike/Documents/Prolog/definitions.pl'),
+	listing(define),
+	told.
 		
 process(3) :-
   start.
