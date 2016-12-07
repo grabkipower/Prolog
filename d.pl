@@ -53,3 +53,9 @@ wylaczony_monitor :-
 	   verify(nie_wlaczony_monitor),
 	   verify(kabel_zasilania),
 	   verify(nie_wcisniety_guzik).	   
+
+:- dynamic unknown/0.
+
+unknown :-
+	verify(nie_moge_pisac).
+

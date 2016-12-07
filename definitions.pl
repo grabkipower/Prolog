@@ -58,3 +58,16 @@ define(wcisniety_guzik) :-
 	write("Nacisnales guzik wlaczenia monitora").
 define(nie_wcisniety_guzik) :-
 	write("Guzik wlaczenia monitora nie jest wcisniety").
+
+
+
+:- dynamic define/1.
+
+define(nie_moge_pisac) :-
+	write(_).
+
+:- dynamic define/1.
+
+define(end_of_file) :-
+	write(end_of_file).
+
