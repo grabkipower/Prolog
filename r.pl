@@ -2,13 +2,13 @@ start:-
   	tryread,
   	diagnoza(Disease),
  	write('Uwazamy ze masz: '),
- 	define(Disease),
+ 	printdefinition(Disease),
  	nl,
  	undo,
 	menu.
   
 menu:-
-	%tryread,
+	tryread,
   	write("***************************************"),nl,
   	write(" *"),nl,
 	write("* 1. Dodaj problem do bazy problemow *"),nl,
@@ -26,19 +26,106 @@ process(1) :-
 	read(Objaw),nl,
 	savedefinition(Objaw),
 	
-	write("Podaj warunek zaistnialego problemu: "),nl,
-	read(Warunek0),nl,	
-	savedefinition(Warunek0),
+	% write("Podaj warunek zaistnialego problemu: "),nl,
+	% read(Warunek0),nl,	
+	% savedefinition(Warunek0),
 	
-	
-	retractall(Objaw),
-	assert( ( Objaw :- verify(Warunek0) ) ),  
-	append('C:/Users/PC/Documents/Prolog/PrologProjekt/d.pl'),
+	write("Podaj 1 warunek zaistnialego problemu: "),nl,
+	read(Warunek0),nl,
+	info,
+	write("Podaj 2 warunek zaistnialego problemu: "),nl,
+	read(TmpWarunek1),nl,
+	(TmpWarunek1 == 'KEK' ->
+	 koniecwarunkowinfo
+	;
+	Warunek1 = TmpWarunek1,
+	savedefinition(Warunek1),
+	info,
+	write("Podaj 3 warunek zaistnialego problemu: "),nl,
+	read(TmpWarunek2),
+		(TmpWarunek2 == 'end'->
+		koniecwarunkowinfo;
+		Warunek2 = TmpWarunek2,
+		savedefinition(Warunek2),
+		info,
+		write("Podaj 4 warunek zaistnialego problemu: "),nl,
+		read(TmpWarunek3),
+			(TmpWarunek3 == 'end'->
+			koniecwarunkowinfo;
+			Warunek3 = TmpWarunek3,
+			savedefinition(Warunek3),
+			info,
+			write("Podaj 5 warunek zaistnialego problemu: "),nl,
+			read(TmpWarunek4),
+				(TmpWarunek4 == 'end'->
+				koniecwarunkowinfo;
+				Warunek4 = TmpWarunek4,
+				savedefinition(Warunek4),
+				info,
+				write("Podaj 6 warunek zaistnialego problemu: "),nl,
+				read(TmpWarunek5),
+					(TmpWarunek5 == 'end'->
+					koniecwarunkowinfo;
+					Warunek5 = TmpWarunek5,
+					savedefinition(Warunek5),
+					info,
+					write("Podaj 7 warunek zaistnialego problemu: "),nl,
+					read(TmpWarunek6),
+						(TmpWarunek6 == 'end'->
+						koniecwarunkowinfo;
+						Warunek6 = TmpWarunek6,
+						savedefinition(Warunek6),
+						info,
+						write("Podaj 8 warunek zaistnialego problemu: "),nl,
+						read(TmpWarunek7),
+							(TmpWarunek7 == 'end'->
+							koniecwarunkowinfo;
+							Warunek7 = TmpWarunek7,
+							savedefinition(Warunek7),
+							info,
+							write("Podaj 9 warunek zaistnialego problemu: "),nl,
+							read(TmpWarunek8),
+								(TmpWarunek8 == 'end'->
+								koniecwarunkowinfo;
+								Warunek8 = TmpWarunek8,
+								savedefinition(Warunek8),
+								info,
+								write("Podaj 10 warunek zaistnialego problemu: "),nl,
+								read(TmpWarunek9),
+									(TmpWarunek9 == 'end'->
+									koniecwarunkowinfo;
+									Warunek9 = TmpWarunek9,
+									savedefinition(Warunek9),
+									info,
+									write("Podaj 11 warunek zaistnialego problemu: "),nl,
+									read(TmpWarunek10),
+										(TmpWarunek10 == 'end'->
+										koniecwarunkowinfo;
+										Warunek10 = TmpWarunek10,
+										savedefinition(Warunek10),
+										koniecwarunkowinfo,
+										write("Podano maksymalna ilosc warunkow dla danego problemu."),nl
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	),
+		retractall(Objaw),
+	assert( ( Objaw :- verify(Warunek0),verify(Warunek1),verify(Warunek2),verify(Warunek3),verify(Warunek4),verify(Warunek5),verify(Warunek6),verify(Warunek7),verify(Warunek8),verify(Warunek9),verify(Warunek10))),  
+	append('C:/Users/Mike/Documents/Prolog/d.pl'),
+	listing(Objaw),
+	told,	
+	append('C:/Users/Mike/Documents/Prolog/d.pl'),
 	listing(Objaw),
 	told,	
 	retractall(diagnoza(X)),
 	assert( ( diagnoza(Objaw) :- Objaw, !) ),
-	append('C:/Users/PC/Documents/Prolog/PrologProjekt/diag.pl'),	
+	append('C:/Users/Mike/Documents/Prolog/diag.pl'),	
 	listing(diagnoza),
 	told,
 	menu.
@@ -55,7 +142,7 @@ savedefinition(X) :-
 	read(Pyt),nl,
 	retractall(define(Z)),
 	assert( ( define(X) :- write(Pyt)) ),
-	append('C:/Users/PC/Documents/Prolog/PrologProjekt/definitions.pl'),
+	append('C:/Users/Mike/Documents/Prolog/definitions.pl'),
 	listing(define),
 	told.	
  
@@ -73,7 +160,7 @@ add_rule(Predicate) :-
 trysave :-	
  	assert( ( boldupy :- verify(headache)) ),
  	assert( ( hypothesis(boldupy) :- boldupy, !) ),
- 	append('C:/Users/PC/Documents/Prolog/PrologProjekt/d.pl'),
+ 	append('C:/Users/Mike/Documents/Prolog/d.pl'),
  	listing(boldupy),
  	listing(hypothesis),
  	/* tutaj trzeba ostro poprawia dodawanie, listing dodaje wszystko, a jak dodaa pojedynczo
@@ -85,17 +172,23 @@ trysave :-
 tryread :-
   	write("Prosze odpowiadac \"y.\" (tak), \"n.\" (nie)."),nl,
   	retractall(diagnoza(X)),
- 	['C:/Users/PC/Documents/Prolog/PrologProjekt/d'],
- 	['C:/Users/PC/Documents/Prolog/PrologProjekt/diag'],
- 	['C:/Users/PC/Documents/Prolog/PrologProjekt/definitions'],
+ 	['C:/Users/Mike/Documents/Prolog/d'],
+ 	['C:/Users/Mike/Documents/Prolog/diag'],
+ 	['C:/Users/Mike/Documents/Prolog/definitions'],
   	assertz( ( diagnoza(unknown)) ).
   	
-  	
+printdefinition(X) :-
+	define(X),!.
+	
+printdefinition(X) :-
+	\+define(X),
+	write(X),!.
+	
  
  /* how to ask questions */
  ask(Question) :-
      write('Czy zaistnial taki problem: '),
-     define(Question),
+     printdefinition(Question),
      write('? '),
      read(Response),
      nl,
@@ -115,3 +208,6 @@ tryread :-
  undo :- retract(yes(_)),fail.
  undo :- retract(no(_)),fail.
  undo.
+ 
+ info :- write('Wpisz end aby zakonczyc podawanie warunków'),nl.
+koniecwarunkowinfo :- write('Zakonono podawanie warunków'),nl.
