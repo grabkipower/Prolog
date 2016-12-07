@@ -134,4 +134,31 @@ awaria_twardziela :-
 awaria_twardziela :-
        verify(uruchamia_sie),
        verify(system_lezy),
-	   verify(brak_dysku_w_bios).	
+	   verify(brak_dysku_w_bios).
+	   
+nielegalna_winda :-
+       verify(uruchamia_sie),
+       verify(czarny_ekran),
+	   verify(napis_od_billa).
+	   
+blad_krytyczny :-
+       verify(uruchamia_sie),
+       verify(blue_screen).
+	   
+bateria_bios_padla :-
+       verify(uruchamia_sie),
+       verify(godzina_zeruje_sie).
+	   
+drukarka_nie_podlaczana_PC :-
+       verify(nie_drukuje),
+       verify(klikaj_drukuj),
+	   verify(nie_podlaczona_druk_pc).
+	   
+drukarka_nie_podlaczana_POWER :-
+       verify(nie_drukuje),
+       verify(klikaj_drukuj),
+       verify(nie_podlaczona_druk_pow).
+	   
+drukarka_nie_zainstalowana :-
+       verify(nie_drukuje),
+       verify(nie_mozna_klikaj_drukuj).

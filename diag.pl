@@ -48,3 +48,15 @@ diagnoza(awaria_napedu_optycznego) :-
 	awaria_napedu_optycznego, !.
 diagnoza(awaria_twardziela) :-
 	awaria_twardziela, !.
+diagnoza(nielegalna_winda) :-
+	nielegalna_winda, !.
+diagnoza(blad_krytyczny) :-
+	blad_krytyczny, !.
+diagnoza(bateria_bios_padla) :-
+	bateria_bios_padla, !.
+diagnoza(drukarka_nie_podlaczana_PC) :-
+	drukarka_nie_podlaczana_PC, !.
+diagnoza(drukarka_nie_podlaczana_POWER) :-
+	drukarka_nie_podlaczana_POWER, !.
+diagnoza(drukarka_nie_zainstalowana) :-
+	drukarka_nie_zainstalowana, !.
