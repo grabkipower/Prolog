@@ -54,3 +54,84 @@ wylaczony_monitor :-
 	   verify(kabel_zasilania),
 	   verify(nie_wcisniety_guzik).	   
 
+awaria_display_driver :-
+       verify(uruchamia_sie),
+       verify(slaby_obraz),
+	   verify(nie_uszkodzona_matryca),
+	   verify(pixeloza).	   
+	   
+uszkodzona_matryca :-
+       verify(uruchamia_sie),
+       verify(slaby_obraz),
+	   verify(uszkodzona_matryca).
+	   
+uszkodzona_myszka :-
+       verify(uruchamia_sie),
+       verify(myszka_nie_dziala),
+	   verify(myszka_podlaczona).
+
+nie_podlaczona_myszka :-
+       verify(uruchamia_sie),
+       verify(myszka_nie_dziala),
+	   verify(myszka_nie_podlaczona).
+	   
+uszkodzona_klawiatura :-
+       verify(uruchamia_sie),
+       verify(klawiatura_nie_dziala),
+	   verify(klawiatura_podlaczona).
+
+nie_podlaczona_klawiatura :-
+       verify(uruchamia_sie),
+       verify(klawiatura_nie_dziala),
+	   verify(klawiatura_nie_podlaczona).
+	   
+uszkodzona_mikrofon :-
+       verify(uruchamia_sie),
+       verify(mikrofon_nie_dziala),
+	   verify(mikrofon_podlaczona).
+
+nie_podlaczona_mikrofon :-
+       verify(uruchamia_sie),
+       verify(mikrofon_nie_dziala),
+	   verify(mikrofon_nie_podlaczona).
+	   
+uszkodzona_glosniki :-
+       verify(uruchamia_sie),
+       verify(glosniki_nie_dziala),
+	   verify(glosniki_podlaczona).
+
+nie_podlaczona_glosniki :-
+       verify(uruchamia_sie),
+       verify(glosniki_nie_dziala),
+	   verify(glosniki_nie_podlaczona).
+
+mocne_przegrzanie_komputera :-
+       verify(uruchamia_sie),
+       verify(praca_zwalnia),
+       verify(bucha_zar),
+       verify(glosna_praca),
+	   verify(komputer_sam_wylacza_sie).
+	   
+przegrzanie_komputera :-
+       verify(uruchamia_sie),
+       verify(praca_zwalnia),
+       verify(bucha_zar),
+       verify(glosna_praca),
+	   verify(zawiecha).
+	   
+awaria_napedu_optycznego :-
+       verify(uruchamia_sie),
+       verify(nie_dziala_CD).	   
+
+awaria_twardziela :-
+       verify(uruchamia_sie),
+       verify(nie_ma_w_mojkomputer).	
+	   
+awaria_twardziela :-
+       verify(uruchamia_sie),
+       verify(nie_mozna_otworzyc).	
+
+awaria_twardziela :-
+       verify(uruchamia_sie),
+       verify(system_lezy),
+	   verify(brak_dysku_w_bios).	

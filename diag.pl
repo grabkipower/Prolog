@@ -20,4 +20,31 @@ diagnoza(awaria_monitora) :-
 	awaria_monitora, !.
 diagnoza(wylaczony_monitor) :-
 	awaria_monitora, !.
-
+diagnoza(awaria_display_driver) :-
+	awaria_display_driver, !.
+diagnoza(uszkodzona_matryca) :-
+	uszkodzona_matryca, !.
+diagnoza(uszkodzona_myszka) :-
+	uszkodzona_myszka, !.
+diagnoza(nie_podlaczona_myszka) :-
+	nie_podlaczona_myszka, !.
+diagnoza(uszkodzona_klawiatura) :-
+	uszkodzona_klawiatura, !.
+diagnoza(nie_podlaczona_klawiatura) :-
+	nie_podlaczona_klawiatura, !.
+diagnoza(uszkodzona_mikrofon) :-
+	uszkodzona_mikrofon, !.
+diagnoza(nie_podlaczona_mikrofon) :-
+	nie_podlaczona_mikrofon, !.
+diagnoza(uszkodzona_glosniki) :-
+	uszkodzona_glosniki, !.
+diagnoza(nie_podlaczona_glosniki) :-
+	nie_podlaczona_glosniki, !.
+diagnoza(mocne_przegrzanie_komputera) :-
+	mocne_przegrzanie_komputera, !.
+diagnoza(przegrzanie_komputera) :-
+	przegrzanie_komputera, !.
+diagnoza(awaria_napedu_optycznego) :-
+	awaria_napedu_optycznego, !.
+diagnoza(awaria_twardziela) :-
+	awaria_twardziela, !.
