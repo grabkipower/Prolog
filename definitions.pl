@@ -63,11 +63,11 @@ define(nie_wcisniety_guzik) :-
 
 :- dynamic define/1.
 
-define(nie_moge_pisac) :-
-	write(_).
+define(wlaczony_monitor) :-
+	write(monitor_jest_wlaczony).
 
 :- dynamic define/1.
 
-define(end_of_file) :-
-	write(end_of_file).
+define(obraz_mryga) :-
+	write(obra_mryga_kolorami_tenczy).
 

@@ -21,9 +21,3 @@ diagnoza(awaria_monitora) :-
 diagnoza(wylaczony_monitor) :-
 	awaria_monitora, !.
 
-
-:- dynamic diagnoza/1.
-
-diagnoza(unknown) :-
-	unknown, !.
-
